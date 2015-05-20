@@ -129,8 +129,6 @@ module Msf::DBManager::Import
       end
     end
 
-    # Override REXML's expansion text limit to 50k (default: 10240 bytes)
-    REXML::Security.entity_expansion_text_limit = 51200
 
     if block
       import(args.merge(:data => data)) { |type,data| yield type,data }
